@@ -32,7 +32,7 @@ LOCAL_CFLAGS            := $(libOmxQcelp13Enc-def)
 LOCAL_C_INCLUDES        := $(libOmxQcelp13Enc-inc)
 LOCAL_PRELINK_MODULE    := false
 LOCAL_SHARED_LIBRARIES  := libutils liblog
-
+LOCAL_CFLAGS            += -Wno-error
 LOCAL_SRC_FILES         := src/aenc_svr.c
 LOCAL_SRC_FILES         += src/omx_qcelp13_aenc.cpp
 

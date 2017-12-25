@@ -12,11 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-LOCAL_PATH:= $(call my-dir)
+LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
-LOCAL_SRC_FILES:= \
+LOCAL_SRC_FILES := \
 	offload_visualizer.c
 
 LOCAL_CFLAGS+= -O2 -fvisibility=hidden
@@ -32,9 +32,9 @@ LOCAL_SHARED_LIBRARIES := \
 	libtinyalsa
 
 LOCAL_HEADER_LIBRARIES := libhardware_headers
-
+LOCAL_CFLAGS            += -Wno-error
 LOCAL_MODULE_RELATIVE_PATH := soundfx
-LOCAL_MODULE:= libqcomvisualizer
+LOCAL_MODULE := libqcomvisualizer
 LOCAL_VENDOR_MODULE := true
 
 LOCAL_C_INCLUDES := \

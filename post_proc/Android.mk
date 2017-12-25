@@ -31,7 +31,7 @@ LOCAL_CFLAGS+= -O2 -fvisibility=hidden
 ifneq ($(strip $(AUDIO_FEATURE_DISABLED_DTS_EAGLE)),true)
     LOCAL_CFLAGS += -DDTS_EAGLE
 endif
-
+LOCAL_CFLAGS            += -Wno-error
 LOCAL_SHARED_LIBRARIES := \
         libcutils \
         liblog \
@@ -41,7 +41,7 @@ LOCAL_SHARED_LIBRARIES := \
 LOCAL_MODULE_TAGS := optional
 
 LOCAL_MODULE_RELATIVE_PATH := soundfx
-LOCAL_MODULE:= libqcompostprocbundle
+LOCAL_MODULE := libqcompostprocbundle
 LOCAL_VENDOR_MODULE := true
 
 LOCAL_ADDITIONAL_DEPENDENCIES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
@@ -75,7 +75,7 @@ LOCAL_SHARED_LIBRARIES := \
 LOCAL_MODULE_TAGS := optional
 
 LOCAL_CFLAGS += -O2 -fvisibility=hidden
-
+LOCAL_CFLAGS            += -Wno-error
 ifeq ($(strip $(AUDIO_FEATURE_ENABLED_DTS_EAGLE)), true)
 LOCAL_CFLAGS += -DHW_ACC_HPX
 endif
@@ -95,18 +95,18 @@ include $(CLEAR_VARS)
 
 LOCAL_CFLAGS := -DLIB_AUDIO_HAL="/vendor/lib/hw/audio.primary."$(TARGET_BOARD_PLATFORM)".so"
 
-LOCAL_SRC_FILES:= \
+LOCAL_SRC_FILES := \
         volume_listener.c
 
-LOCAL_CFLAGS+= -O2 -fvisibility=hidden
-
+LOCAL_CFLAGS += -O2 -fvisibility=hidden
+LOCAL_CFLAGS            += -Wno-error
 LOCAL_SHARED_LIBRARIES := \
         libcutils \
         liblog \
         libdl
 
 LOCAL_MODULE_RELATIVE_PATH := soundfx
-LOCAL_MODULE:= libvolumelistener
+LOCAL_MODULE := libvolumelistener
 LOCAL_VENDOR_MODULE := true
 
 LOCAL_C_INCLUDES := \

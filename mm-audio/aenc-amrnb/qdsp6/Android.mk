@@ -32,7 +32,7 @@ LOCAL_CFLAGS            := $(libOmxAmrEnc-def)
 LOCAL_C_INCLUDES        := $(libOmxAmrEnc-inc)
 LOCAL_PRELINK_MODULE    := false
 LOCAL_SHARED_LIBRARIES  := libutils liblog
-
+LOCAL_CFLAGS            += -Wno-error
 LOCAL_SRC_FILES         := src/aenc_svr.c
 LOCAL_SRC_FILES         += src/omx_amr_aenc.cpp
 

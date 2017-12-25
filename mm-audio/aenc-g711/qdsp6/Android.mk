@@ -32,7 +32,7 @@ LOCAL_CFLAGS            := $(libOmxG711Enc-def)
 LOCAL_C_INCLUDES        := $(libOmxG711Enc-inc)
 LOCAL_PRELINK_MODULE    := false
 LOCAL_SHARED_LIBRARIES  := libutils liblog libcutils
-
+LOCAL_CFLAGS            += -Wno-error
 LOCAL_SRC_FILES         := src/aenc_svr.c
 LOCAL_SRC_FILES         += src/omx_g711_aenc.cpp
 LOCAL_SRC_FILES         += src/omx_log.cpp
